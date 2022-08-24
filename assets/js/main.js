@@ -1,29 +1,25 @@
 function validateCpf(cpf) {
     const cpfCleaned = cpf.replace(/\D+/g, '')
+
+    if (cpfCleaned.length !== 11) return console.log('cpf must have 11 digits')
+
     const cpfArray = Array.from(cpfCleaned)
     const cpfWithoutDigit = cpfArray.splice(0, 9)
+    const cpfFirstDigit = calcDigit(cpfWithoutDigit, 10)
+    const cpfWithOneDigit = [...cpfWithoutDigit, cpfFirstDigit]
+    const cpfSecondDigit = calcDigit(cpfWithOneDigit, 11)
+    const cpfValidated = [...cpfWithOneDigit, cpfSecondDigit].join('')
 
-    const cpfFirstDigit = () => {
-        const cpfFirstOperation = cpfWithoutDigit
-            .map((value, index) => Number(value) * (10 - index))
+    cpfValidated === cpfCleaned ? console.log('valid cpf number') : console.log('invalid cpf number')
+
+    function calcDigit (cpfPiece, numMultiplier) {
+        const cpfOperation = cpfPiece
+            .map((value, index) => Number(value) * (numMultiplier - index))
             .reduce((accumulator, value) => accumulator + value, 0)
 
-        const firstDigitCalc = 11 - (cpfFirstOperation % 11)
-        return firstDigitCalc < 10 ? firstDigitCalc : 0
+        const digit = 11 - (cpfOperation % 11)
+        return digit < 10 ? digit : 0
     }
-
-    const cpfSecondDigit = () => {
-        const cpfSecondOperation = [...cpfWithoutDigit, cpfFirstDigit()]
-            .map((value, index) => value * (11 - index))
-            .reduce((accumulator, value) => accumulator + value, 0)
-
-        const secondDigitCalc = 11 - (cpfSecondOperation % 11)
-        return secondDigitCalc < 10 ? secondDigitCalc : 0
-    }
-
-    const cpfFound = [...cpfWithoutDigit, cpfFirstDigit(), cpfSecondDigit()].join('')
-
-    cpfFound === cpfCleaned ? console.log('valid cpf number') : console.log('invalid cpf number')
 }
 
-validateCpf('705.484.450-52')
+validateCpf('705.484.450-5')
