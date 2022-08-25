@@ -77,9 +77,6 @@ function chooseActionOption() {
         }
     })
 
-    
-
-
     function appendElements(parent, child1, child2) {
         for (let element of arguments) {
             console.log(element)
