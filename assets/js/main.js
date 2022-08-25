@@ -36,15 +36,14 @@ function chooseActionOption() {
         switch (actionOption.value) {
             case 'validate-cpf':
                 optionValidateCpf()
-            break;
+                break;
 
             case 'generate-random-cpf':
                 optionGenerateRandomCpf()
-            break;
-            
+                break;
+
             case 'create-manual-cpf':
                 optionCreateManualCpf()
-                
         }
 
         function optionValidateCpf() {
@@ -58,22 +57,22 @@ function chooseActionOption() {
             console.log('test')
         }
 
-        function optionGenerateRandomCpf () {
+        function optionGenerateRandomCpf() {
             chosenOptionContainer.innerHTML = ''
-                const resultButton2 = createElementWithText('button', 'gerar CPF')
-                chosenOptionContainer.appendChild(resultButton2)
+            const resultButton2 = createElementWithText('button', 'gerar CPF')
+            chosenOptionContainer.appendChild(resultButton2)
         }
 
-        function optionCreateManualCpf () {
+        function optionCreateManualCpf() {
             chosenOptionContainer.innerHTML = ''
-                const orientationText2 = createElementWithText('h3',
-                    'insira os primeiros nove números do CPF para ele ser completado com dígitos válidos')
-                const cpfInput2 = document.createElement('input')
-                cpfInput2.setAttribute('type', 'text')
-                cpfInput2.setAttribute('maxlength', '9')
-                const resultButton3 = createElementWithText('button', 'criar CPF')
-                appendElements(chosenOptionContainer, orientationText2, cpfInput2, resultButton3)
-                console.log('test')
+            const orientationText2 = createElementWithText('h3',
+                'insira os primeiros nove números do CPF para ele ser completado com dígitos válidos')
+            const cpfInput2 = document.createElement('input')
+            cpfInput2.setAttribute('type', 'text')
+            cpfInput2.setAttribute('maxlength', '9')
+            const resultButton3 = createElementWithText('button', 'criar CPF')
+            appendElements(chosenOptionContainer, orientationText2, cpfInput2, resultButton3)
+            console.log('test')
         }
     })
 
