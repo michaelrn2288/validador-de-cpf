@@ -1,12 +1,32 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Validador de CPF</title>
+    <title>Validador e gerador de CPF</title>
 </head>
+
 <body>
-    
+
+    <main>
+        <h1>Validador e gerador de CPF</h1>
+        <h2>O que você gostaria de fazer?</h2>
+
+        <form>
+            <select id="cpf-option">
+                <option value="validate-cpf">Validar um número de CPF</option>
+                <option value="generate-random-cpf">Gerar um número aleatório válido de CPF</option>
+                <option value="create-manual-cpf">Criar manualmente um número válido de CPF</option>
+            </select>
+        </form>
+
+        <section id="chosen-option-container"></section>
+
+    </main>
+
+    <script src="./assets/js/main.js"></script>
 </body>
+
 </html>
