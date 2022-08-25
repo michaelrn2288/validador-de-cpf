@@ -7,3 +7,5 @@
 </ol>
 
 https://michaelrn2288.github.io/validador-de-cpf/
+
+<i>(ainda será estilizado com CSS)</i>
