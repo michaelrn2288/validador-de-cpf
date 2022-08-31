@@ -16,7 +16,7 @@ function cpfValidator() {
 
         buildValidCpf(cpfWithoutDigit)
 
-        cpfValidated === cpfCleaned ? result.innerText = 'CPF válido' : result.innerText = 'CPF inválidor'
+        cpfValidated === cpfCleaned ? result.innerText = 'CPF válido' : result.innerText = 'CPF inválido'
     }
 
     function generateRandomCpf() {
