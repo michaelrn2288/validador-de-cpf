@@ -31,7 +31,7 @@ function cpfValidator() {
     function createManualCpf(cpf) {
         const cpfCleaned = cpf.replace(/\D+/g, '')
 
-        if (cpfCleaned.length !== 9) return result.innerText = 'you must insert 9 digits'
+        if (cpfCleaned.length !== 9) return result.innerText = 'você deve inserir 9 dígitos'
 
         const cpfArray = Array.from(cpfCleaned)
         const cpfWithoutDigit = cpfArray.splice(0, 9)
