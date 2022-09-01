@@ -3,11 +3,13 @@
     padding: 0;
     margin: 0;
     font-family: sans-serif;
+    box-sizing: border-box;
+    transition: 0.2s;
 }
 
 html {
     height: 100%;
-    overflow: hidden;
+
 }
 
 body {
@@ -16,10 +18,10 @@ body {
 }
 
 main {
-    width: 500px;
+    width: 30em;
     height: 100%;
     margin: 0 auto;
-    padding: 30px;
+    padding: 2em;
     background-color: rgba(255, 255, 255, 0.6)
 }
 
@@ -27,7 +29,7 @@ main  *:not(input) {
     margin: auto;
     display: block;
     text-align: center;
-    margin-bottom: 30px;
+    margin-bottom: 1em;
 }
 
 h1 {
@@ -38,7 +40,10 @@ h1 {
 h2 {
     text-align: center;
     font-size: 2em;
-    margin-bottom: 15px;
+}
+
+h3 {
+    font-size: 1.5em;
 }
 
 select {
@@ -48,7 +53,7 @@ select {
 input {
     font-size: 1.2em;
     text-align: center;
-    margin-bottom: 30px;
+    margin-bottom: 2em;
 }
 
 button {
@@ -57,7 +62,6 @@ button {
     padding: 0.5em;
     border-radius: 0.2em;
     border-color: green;
-    transition: 0.5s;
 }
 
 button:hover {
@@ -67,4 +71,16 @@ button:hover {
 #result {
     font-size: 2em;
     font-weight: bold;
+}
+
+@media only screen and (max-width: 800px) {
+    html {
+        font-size: 0.8em;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    html {
+        font-size: 0.6em;
+    }
 }
